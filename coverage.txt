@@ -1,0 +1,5 @@
+mode: set
+BookstoreUtils/errors/rest_errors/rest_errors.go:14.61,26.2 1 1
+BookstoreUtils/errors/rest_errors/rest_errors.go:28.59,42.2 1 1
+BookstoreUtils/errors/rest_errors/rest_errors.go:44.65,60.2 1 1
+BookstoreUtils/errors/rest_errors/rest_errors.go:62.63,76.2 1 1
