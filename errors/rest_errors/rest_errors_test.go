@@ -19,11 +19,11 @@ const (
 )
 
 var (
-	e = errors.New(errMsg)
+	errFoo = errors.New(errMsg)
 )
 
 func TestNewInternalServerError(t *testing.T) {
-	err := NewInternalServerError(e, productionMsg)
+	err := NewInternalServerError(errFoo, productionMsg)
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusInternalServerError, err.Status)
 	assert.EqualValues(t, productionMsg, err.Message)
@@ -35,7 +35,7 @@ func TestNewInternalServerError(t *testing.T) {
 }
 
 func TestNewBadRequestError(t *testing.T) {
-	err := NewBadRequestError(e, productionMsg)
+	err := NewBadRequestError(errFoo, productionMsg)
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusBadRequest, err.Status)
 	assert.EqualValues(t, productionMsg, err.Message)
@@ -47,7 +47,7 @@ func TestNewBadRequestError(t *testing.T) {
 }
 
 func TestNewNotFoundError(t *testing.T) {
-	err := NewNotFoundError(e, productionMsg)
+	err := NewNotFoundError(errFoo, productionMsg)
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusNotFound, err.Status)
 	assert.EqualValues(t, productionMsg, err.Message)
@@ -59,7 +59,7 @@ func TestNewNotFoundError(t *testing.T) {
 }
 
 func TestNewUnauthorizedError(t *testing.T) {
-	err := NewUnauthorizedError(e, productionMsg)
+	err := NewUnauthorizedError(errFoo, productionMsg)
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusUnauthorized, err.Status)
 	assert.EqualValues(t, productionMsg, err.Message)
